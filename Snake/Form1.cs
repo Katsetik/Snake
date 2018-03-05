@@ -7,7 +7,7 @@ namespace Snake
 {
     public partial class Form1 : Form
     {
-        private List<Circle> Snake = new List<Circle>();
+        private List<Circle> Snake = new List<Circle>(); //TODO: 'Snake' should be a class, that will encapsulate list.
         private Circle food = new Circle();
 
         public Form1()
@@ -31,16 +31,16 @@ namespace Snake
             lblGameOver.Visible = false;
 
             //Set settings to default
-            new Settings();
+            new Settings(); //TODO: Constructors are intented to create a class, so it's better not to use a constructor as a void method.
 
             //Create new player object
             Snake.Clear();
-            Circle head = new Circle {X = 10, Y = 5};
+            Circle head = new Circle { X = 10, Y = 5 }; //TODO: This could be a field for 'Snake' class.
             Snake.Add(head);
 
 
             lblScore.Text = Settings.Score.ToString();
-            GenerateFood();
+            GenerateFood(); //TODO: This looks like a method of 'Game' class. Think what other methods belong to this class.
 
         }
 
@@ -51,7 +51,7 @@ namespace Snake
             int maxYPos = pbCanvas.Size.Height / Settings.Height;
 
             Random random = new Random();
-            food = new Circle {X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos)};
+            food = new Circle { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
         }
 
 
@@ -123,7 +123,7 @@ namespace Snake
             }
         }
 
-
+        //TODO: I think you are moving snake here, not the player.
         private void MovePlayer()
         {
             for (int i = Snake.Count - 1; i >= 0; i--)

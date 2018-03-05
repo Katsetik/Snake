@@ -1,8 +1,10 @@
-﻿using System.Collections; 
-using System.Windows.Forms; 
+﻿using System.Collections;
+using System.Windows.Forms;
 
 namespace Snake
 {
+    //TODO: Don't use comments - the code should be self-descriptive (here and in other files). 
+    //Self-descriptive means understandable from the mehods/fields names.
     internal class Input
     {
         //Load list of available Keyboard buttons
@@ -16,7 +18,7 @@ namespace Snake
                 return false;
             }
 
-            return (bool) keyTable[key];
+            return (bool)keyTable[key];
         }
 
         //Detect if a keyboard button is pressed
